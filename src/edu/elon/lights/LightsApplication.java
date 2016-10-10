@@ -10,13 +10,13 @@ import edu.elon.lights.data.LightsProperties;
 public class LightsApplication {
 	
 	public static void main (String[] args) {
-		PHHueSDK sdk = PHHueSDK.create();
-		LightsProperties.loadProperties();
-		
-		LightConnection connection = new LightConnection();
-		sdk.getNotificationManager().registerSDKListener(connection.getListener());
-		connection.findBridges();
-		connection.connect();
+//		PHHueSDK sdk = PHHueSDK.create();
+//		LightsProperties.loadProperties();
+//		
+//		LightConnection connection = new LightConnection();
+//		sdk.getNotificationManager().registerSDKListener(connection.getListener());
+//		connection.findBridges();
+//		connection.connect();
 		
 		
 	}

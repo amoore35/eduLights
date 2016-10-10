@@ -17,24 +17,18 @@ import java.awt.*;
 public class PositionTracking extends PApplet{
 
 	private SimpleOpenNI context;
-	private ControlP5 cp5;
 	private ArrayList<Integer> users = new ArrayList<>();
 	private PVector pos = new PVector();
 	private static final int MID_X = 0;
 	private KinectLightController controller;
 	boolean current = false;
-	int colorWhite = color(255);
-	private GButton trigButton; 
-	private GButton libraryButton; 
-	private GButton configButton; 
-	private GLabel titleLabel; 
 	
 	private ArrayList<PHLight> lights;
 	
 	public void setup() {
 		size(750,500, JAVA2D);
-		background(colorWhite);
-		createGUI();
+//		background(colorWhite);
+//		createGUI();
 
 //		cp5 = new ControlP5(this);
 //		noStroke();
@@ -66,9 +60,9 @@ public class PositionTracking extends PApplet{
 //		return b;
 //	}
 	
-	public void controlEvent(ControlEvent event) {
-		System.out.println(event.getController().getName());
-	}
+//	public void controlEvent(ControlEvent event) {
+//		System.out.println(event.getController().getName());
+//	}
 	
 	
 	public void draw() {
@@ -93,32 +87,32 @@ public class PositionTracking extends PApplet{
 		}
 	}
 	
-	public void createGUI(){
-		  G4P.messagesEnabled(false);
-		  G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
-		  G4P.setCursor(ARROW);
-		  if(frame != null)
-		    frame.setTitle("Sketch Window");
-		  trigButton = new GButton(this, 40, 100, 120, 120);
-		  trigButton.setText("Trigger/Response Setup");
-		  trigButton.setTextBold();
-		  trigButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
-		  trigButton.addEventHandler(this, "trigClick");
-		  libraryButton = new GButton(this, 180, 100, 120, 120);
-		  libraryButton.setText("Lights Library");
-		  libraryButton.setTextBold();
-		  libraryButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
-		  libraryButton.addEventHandler(this, "libraryClick");
-		  configButton = new GButton(this, 320, 100, 120, 120);
-		  configButton.setText("Bridge Configuration");
-		  configButton.setTextBold();
-		  configButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
-		  configButton.addEventHandler(this, "configClick");
-		  titleLabel = new GLabel(this, 200, 40, 80, 40);
-		  titleLabel.setText("Lights App");
-		  titleLabel.setTextBold();
-		  titleLabel.setOpaque(false);
-		}
+//	public void createGUI(){
+//		  G4P.messagesEnabled(false);
+//		  G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
+//		  G4P.setCursor(ARROW);
+//		  if(frame != null)
+//		    frame.setTitle("Sketch Window");
+//		  trigButton = new GButton(this, 40, 100, 120, 120);
+//		  trigButton.setText("Trigger/Response Setup");
+//		  trigButton.setTextBold();
+//		  trigButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+//		  trigButton.addEventHandler(this, "trigClick");
+//		  libraryButton = new GButton(this, 180, 100, 120, 120);
+//		  libraryButton.setText("Lights Library");
+//		  libraryButton.setTextBold();
+//		  libraryButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+//		  libraryButton.addEventHandler(this, "libraryClick");
+//		  configButton = new GButton(this, 320, 100, 120, 120);
+//		  configButton.setText("Bridge Configuration");
+//		  configButton.setTextBold();
+//		  configButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+//		  configButton.addEventHandler(this, "configClick");
+//		  titleLabel = new GLabel(this, 200, 40, 80, 40);
+//		  titleLabel.setText("Lights App");
+//		  titleLabel.setTextBold();
+//		  titleLabel.setOpaque(false);
+//		}
 	
    public void onNewUser(SimpleOpenNI curContext, int userId) {
 		users.add(userId);
@@ -126,15 +120,15 @@ public class PositionTracking extends PApplet{
 		System.out.println("new user");
 	}
    
-	   public void trigClick(GButton source, GEvent event) { //_CODE_:trigButton:606518:
-	   println("button1 - GButton >> GEvent." + event + " @ " + millis());
-	 } //_CODE_:trigButton:606518:
-	
-	 public void libraryClick(GButton source, GEvent event) { //_CODE_:libraryButton:946758:
-	   println("libraryButton - GButton >> GEvent." + event + " @ " + millis());
-	 } //_CODE_:libraryButton:946758:
-	
-	 public void configClick(GButton source, GEvent event) { //_CODE_:configButton:350818:
-	   println("configButton - GButton >> GEvent." + event + " @ " + millis());
-	 } //_CODE_:configButton:350818:
+//	   public void trigClick(GButton source, GEvent event) { //_CODE_:trigButton:606518:
+//	   println("button1 - GButton >> GEvent." + event + " @ " + millis());
+//	 } //_CODE_:trigButton:606518:
+//	
+//	 public void libraryClick(GButton source, GEvent event) { //_CODE_:libraryButton:946758:
+//	   println("libraryButton - GButton >> GEvent." + event + " @ " + millis());
+//	 } //_CODE_:libraryButton:946758:
+//	
+//	 public void configClick(GButton source, GEvent event) { //_CODE_:configButton:350818:
+//	   println("configButton - GButton >> GEvent." + event + " @ " + millis());
+//	 } //_CODE_:configButton:350818:
 }
