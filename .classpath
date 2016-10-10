@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/Java-DesktopApp - PUBLIC/libs/huelocalsdk.jar"/>
+	<classpathentry kind="lib" path="/Java-DesktopApp - PUBLIC/libs/huesdkresources.jar"/>
+	<classpathentry kind="lib" path="/Java-DesktopApp - PUBLIC/libs/tablelayout.jar"/>
+	<classpathentry kind="lib" path="/Users/LEXI/Downloads/Processing 2.app/Contents/Java/core.jar"/>
+	<classpathentry kind="lib" path="/Users/LEXI/Documents/Processing/libraries/SimpleOpenNI/library/SimpleOpenNI.jar"/>
+	<classpathentry kind="lib" path="/Users/LEXI/Documents/Processing/controlP5-2.2.5/controlP5/library/controlP5.jar"/>
+	<classpathentry kind="lib" path="/Users/LEXI/Documents/G4P/library/G4P.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
