@@ -21,6 +21,7 @@ public class KinectLightController {
 	private PHLight rightLight2;
 	
 	public KinectLightController() {
+		
 		sdk = PHHueSDK.create();
 		LightsProperties.loadProperties();
 		
@@ -52,6 +53,16 @@ public class KinectLightController {
 		controller.turnOnRandomHue(lights.get(2));
 	}
 	
+	public boolean isConnected () {
+		List<PHLight> lights = null;
+		try {
+			lights = connection.getLights();
+		} catch (NullPointerException e) {
+			return false;
+		}
+		return connection.getLights() != null;
+	}
+	
 	public void turnOnRandomRight() {
 		List<PHLight> lights = connection.getLights();
 		
@@ -68,6 +79,23 @@ public class KinectLightController {
         List<PHLight> lights = connection.getLights();
 		
 		controller.turnOffLight(lights.get(1));
+	}
+	
+	public void turnOnAllRandom() {
+		ArrayList<PHLight> lights = (ArrayList<PHLight>) connection.getLights();
+		controller.turnOnAllLights(lights);
+	}
+	
+	public void turnOnLeft(Integer color) {
+		List<PHLight> lights = connection.getLights();
+		
+		controller.turnLightColor(lights.get(2), color);
+	}
+	
+	public void turnOnRight(Integer color) {
+		List<PHLight> lights = connection.getLights();
+		
+		controller.turnLightColor(lights.get(1), color);
 	}
 	
 }

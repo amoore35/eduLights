@@ -1,5 +1,6 @@
 package edu.elon.lights;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -14,6 +15,8 @@ public class LightController {
 	private PHHueSDK sdk;
 	
 	private static final int MAX_HUE = 65535;
+	public static final int GREEN = 25500;
+	public static final int RED = 0;
 	
 	public LightController(PHBridge bridge, PHHueSDK sdk) {
 		this.sdk = sdk;
@@ -40,6 +43,23 @@ public class LightController {
 		PHLightState lightState = new PHLightState();
 		lightState.setOn(false);
 		bridge.updateLightState(light, lightState);
+	}
+	
+	public void turnOnAllLights(ArrayList<PHLight> lights) {
+		for (PHLight light : lights) {
+			turnOnRandomHue(light);
+		}
+	}
+	
+	public void turnLightColor(PHLight light, Integer value) {
+	  PHBridge bridge = sdk.getSelectedBridge();
+      Random rand = new Random();
+
+    
+      PHLightState lightState = new PHLightState();
+      lightState.setOn(true);
+      lightState.setHue(value);
+      bridge.updateLightState(light, lightState);
 	}
 
 }
