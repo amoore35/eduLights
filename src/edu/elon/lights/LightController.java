@@ -17,6 +17,9 @@ public class LightController {
 	private static final int MAX_HUE = 65535;
 	public static final int GREEN = 25500;
 	public static final int RED = 0;
+	public static final int BLUE = 46920;
+	public static final int YELLOW = 12750;
+	
 	
 	public LightController(PHBridge bridge, PHHueSDK sdk) {
 		this.sdk = sdk;
@@ -34,7 +37,6 @@ public class LightController {
         lightState.setOn(true);
         lightState.setHue(rand.nextInt(MAX_HUE));
         bridge.updateLightState(light, lightState); // If no bridge response is required then use this simpler form.
-        
 	}
 	
 	public void turnOffLight(PHLight light) {
@@ -51,10 +53,12 @@ public class LightController {
 		}
 	}
 	
+	
 	public void turnLightColor(PHLight light, Integer value) {
 	  PHBridge bridge = sdk.getSelectedBridge();
       Random rand = new Random();
 
+     
     
       PHLightState lightState = new PHLightState();
       lightState.setOn(true);
