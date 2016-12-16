@@ -1,9 +1,8 @@
-package edu.elon.lights.apps;
+package edu.elon.kinect;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import edu.elon.kinect.PositionTracking;
 import edu.elon.lights.LightController;
 
 public class MathApp extends PositionTracking {
@@ -92,11 +91,12 @@ public class MathApp extends PositionTracking {
 		
 		
 		System.out.println(generateMathProblem());
+		int newAnswer = answer + 3;
 		if (leftRight == 0) {
 			System.out.println("Walk to the left light if you think the answer is " + answer);
-			System.out.println("Walk to the right light if you think the answer is " + answer + 3);
+			System.out.println("Walk to the right light if you think the answer is " + newAnswer);
 		} else {
-			System.out.println("Walk to the left light if you think the answer is " + answer + 3);
+			System.out.println("Walk to the left light if you think the answer is " + newAnswer);
 			System.out.println("Walk to the right light if you think the answer is " + answer);
 		}
 		

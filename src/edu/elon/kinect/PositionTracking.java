@@ -6,6 +6,7 @@ import com.philips.lighting.model.PHLight;
 
 import SimpleOpenNI.*;
 import controlP5.*;
+import edu.elon.lights.LightCommand;
 import g4p_controls.G4P;
 import g4p_controls.GButton;
 import g4p_controls.GCScheme;
@@ -20,7 +21,7 @@ public abstract class PositionTracking extends PApplet{
 	protected ArrayList<Integer> users = new ArrayList<>();
 	protected PVector pos = new PVector();
 //	private static final int MID_X = 0;
-	protected KinectLightController controller;
+	protected LightCommand controller;
 	protected boolean current = false;
 	
 	private ArrayList<PHLight> lights;
@@ -38,7 +39,7 @@ public abstract class PositionTracking extends PApplet{
 		context.enableDepth();
 		context.enableUser();
 
-		controller = new KinectLightController();
+		controller = new LightCommand();
 	}
 	
 	public abstract void draw();

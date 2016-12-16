@@ -1,16 +1,16 @@
-package edu.elon.kinect;
+package edu.elon.lights;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.philips.lighting.hue.sdk.PHHueSDK;
 import com.philips.lighting.model.PHLight;
 
-import edu.elon.lights.LightConnection;
-import edu.elon.lights.LightController;
+import edu.elon.lights.LightController.LightColors;
 import edu.elon.lights.data.LightsProperties;
 
-public class KinectLightController {
+public class LightCommand {
 
 	private PHHueSDK sdk;
 	private LightController controller;
@@ -20,7 +20,8 @@ public class KinectLightController {
 	private PHLight rightLight1;
 	private PHLight rightLight2;
 	
-	public KinectLightController() {
+	public LightCommand() {
+		
 		
 		sdk = PHHueSDK.create();
 		LightsProperties.loadProperties();
@@ -34,18 +35,7 @@ public class KinectLightController {
 		
 		
 		controller = connection.getLightController();
-//		lights = connection.getLights();
-//		leftLight = lights.get(2);
-//		rightLight1 = lights.get(1);
-//		rightLight2 = lights.get(0);
 	}
-	
-//	public void setUpLights() {
-//		lights = connection.getLights();
-//		leftLight = lights.get(2);
-//		rightLight1 = lights.get(1);
-//		rightLight2 = lights.get(0);
-//	}
 	
 	public void turnOnRandomLeft() {
 		List<PHLight> lights = connection.getLights();
@@ -98,4 +88,21 @@ public class KinectLightController {
 		controller.turnLightColor(lights.get(1), color);
 	}
 	
+	public void turnOnMainLamp(int r, int g, int b) {
+		List<PHLight> lights = connection.getLights();
+		
+		controller.turnLightRGB(lights.get(0), r, g, b);
+	}
+	
+	public void turnOnMainLamp(Color c) {
+		List<PHLight> lights = connection.getLights();
+		
+		controller.turnLightRGB(lights.get(0), c.getRed(), c.getGreen(), c.getBlue());
+	}
+	
+	public void turnOnMainLamp(LightColors color) {
+
+		List<PHLight> lights = connection.getLights();
+		controller.turnLightColor(lights.get(0), color);
+	}
 }

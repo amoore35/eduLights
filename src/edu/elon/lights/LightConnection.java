@@ -46,8 +46,8 @@ public class LightConnection {
 //		String username = LightsProperties.getUsername();
 //		String ipAddress = LightsProperties.getLastConnectedIP();
 		
-		String username = "sZvbjii0fcZFh8zy63hGWg9VvFweXfS0p6mLp3n4";
-		String ipAddress = "192.168.0.14";
+		String username = "g0mhLbTmUabDf9a8lJdfSvjJXjSX7g113xXKCQ83";
+		String ipAddress = "192.168.1.125";
 		
 		if (username == null || ipAddress == null) {
 			System.out.println("Missing last username or ip address");
